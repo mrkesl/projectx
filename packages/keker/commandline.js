@@ -14,7 +14,7 @@ function ParseCmd(s){
 			mp.players.forEach(player => { 
 				if(player.name.toLowerCase() == args[1].toLowerCase()){
 					player.ban("Console");
-					res = " Player "+player.name+" was banned!!!";
+					res = " Player "+player.name+" wurde gebannt.";
 				} 
 				});
 			break;
@@ -22,7 +22,7 @@ function ParseCmd(s){
 			mp.players.forEach(player => { 
 				if(player.name.toLowerCase() == args[1].toLowerCase()){
 					player.kick("Console");
-					res = " Player "+player.name+" was kicked!!!";
+					res = " Player "+player.name+" wurde gekickt.";
 				} 
 				});
 			break;
@@ -31,7 +31,7 @@ function ParseCmd(s){
 				mp.players.forEach(player => { 
 				if(player.name.toLowerCase() == args[1].toLowerCase()){
 					player.position = new mp.Vector3(parseFloat(args[2]), parseFloat(args[3]), parseFloat(args[4]));
-					res = " Player "+player.name+" was teleported to X:"+parseFloat(args[2])+" Y:"+parseFloat(args[3])+" Z:"+parseFloat(args[4])+"!!!";
+					res = " Player "+player.name+" wurde teleportiert - X:"+parseFloat(args[2])+" Y:"+parseFloat(args[3])+" Z:"+parseFloat(args[4])+"!!!";
 				} 
 				});
 			} else {
@@ -43,7 +43,7 @@ function ParseCmd(s){
 				mp.players.forEach(player => { 
 				if(player.name.toLowerCase() == args[1].toLowerCase()){
 					player.giveWeapon(mp.joaat(args[2]), parseInt(args[3]));
-					res = " Player "+player.name+" received weapons!!!";
+					res = " Player "+player.name+" erhält Waffe!";
 				} 
 				});
 			} else {
@@ -60,7 +60,7 @@ function ParseCmd(s){
 			});
 			break;
 		default:
-			res = " Unknown command!!!";
+			res = " Unbekannter Befehl!";
 			break;
 	}
 	return res;
