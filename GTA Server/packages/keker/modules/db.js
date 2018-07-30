@@ -6,7 +6,7 @@ module.exports = {
         this.Handle = mysql.createConnection({
             host     : 'localhost', //do not use ip address as a host, create a dns if your mysql server is not hosted on same server/machine as ragemp server
             user     : 'root',
-            password : 'cooper1991',
+            password : '',
             database : 'gta5'
         });
         this.Handle.connect(function(e) {
