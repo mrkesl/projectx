@@ -1,12 +1,9 @@
 {
-	"name" : "ProjectX",
-	"port" : 22005,
-	"url" : "botflakes.de",
-	"language" : "de",
-	"sync-rate" : "40",
-	"max-ping" : "350",
-	"gamemode" : "Roleplay",
+	"maxplayers" : 100,
+	"name" : "ProjectX", 
+	"gamemode" : "freeroam", 
 	"stream-distance" : 500.0,
-	"announce" : true,
-	"csharp" : "enabled"
+	"announce" : false,
+	"csharp" : "enabled",
+	"port": 22005
 }
