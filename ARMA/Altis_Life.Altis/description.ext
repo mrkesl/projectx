@@ -1,0 +1,354 @@
+author = "Tonic";
+onLoadName = "Altis Life RPG v3.1.4.8";
+onLoadMission = "A RPG game mode developed by Tonic. Modified by Libra-Gaming.eu";
+onLoadIntro = "Willkommen bei Libra-Gaming.eu";
+joinUnassigned = 1;
+respawn = BASE;
+respawndelay = 5;
+disabledAI = 1;
+disableChannels[]={0,1,2};
+enableDebugConsole = 1;
+respawnDialog = 0;
+LoadScreen = "textures\loadscreen.jpg";
+
+class Header
+{
+	gameType = RPG;
+	minPlayers = 1;
+	maxPlayers = 113;
+};
+
+wreckLimit = 3;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 320;
+corpseLimit = 128;
+corpseRemovalMinTime = 300;
+corpseRemovalMaxTime = 600;
+
+//Arma 3 Remote Execution Security
+class CfgRemoteExec
+{
+	// List of script functions allowed to be sent from client via remoteExec
+	class Functions
+	{
+		// State of remoteExec: 0-turned off, 1-turned on, taking whitelist into account, 2-turned on, however, ignoring whitelists
+		mode = 2;
+		// Ability to send jip messages: 0-disabled, 1-enabled (default)
+		jip = 1;
+	};
+};
+
+#include "dialog\MasterHandler.h"
+
+#include "Larvell\admin\admin_basic_menu.hpp"
+#include "Larvell\admin\admin_db_menu.hpp"
+
+class RscTitles
+{
+	#include "dialog\ui.hpp"
+	#include "dialog\progress.hpp"
+	#include "dialog\hud_nameTags.h"
+	#include "dialog\statusBar.hpp"
+	#include "dialog\statusBar2.hpp"
+};
+
+class CfgFunctions
+{
+	#include "Functions.h"
+};
+
+class CfgSounds
+{
+	sounds[] = {};
+	class SirenLongL
+	{
+		name = "SirenLongL";
+		sound[] = {"\sounds\Siren_Long.ogg", 1.5, 1};
+		titles[] = {};
+	};
+	class empwarn
+	{
+		name = "empwarn";
+		sound[] = {"sounds\empwarn.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	class empacsound
+	{
+		name = "empacsound";
+		sound[] = {"sounds\empac.ogg", db-5, 1};
+		titles[] = {};
+	};
+	class	SirenLongS
+	{
+		name = "SirenLongS";
+		sound[] = {"\sounds\Siren_Long.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	class YelpL
+	{
+		name = "SirenLongL";
+		sound[] = {"\sounds\Yelp.ogg", 1.5, 1};
+		titles[] = {};
+	};
+	class kabelsound
+	{
+		name = "kabelsound";
+		sound[] = {"\sounds\kabelsound.ogg", 0.5, 1};
+		titles[] = {};
+	};
+	class kabelauf
+	{
+		name = "kabelauf";
+		sound[] = {"\sounds\kabelauf.ogg", 0.5, 1};
+		titles[] = {};
+	};
+	class YelpS
+	{
+		name = "SirenLongS";
+		sound[] = {"\sounds\Yelp.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	class disco
+	{
+		name = "disco";
+		sound[] = {"\sounds\disco.ogg", 0.5, 1};
+		titles[] = {};
+	};
+	class Durchsage
+	{
+		name = "Durchsage";
+		sound[] = {"\sounds\ans.ogg", 2, 1};
+		titles[] = {};
+	};
+	class eeg1
+	{
+		name = "eeg1";
+		sound[] = {"\sounds\eeg1.ogg", 2, 1};
+		titles[] = {};
+	};
+	class medic_sirenL
+	{
+		name = "medic_sirenL";
+		sound[] = {"\sounds\medic_siren.ogg", 1.5, 1};
+		titles[] = {};
+	};
+	class medic_sirenS
+	{
+		name = "medic_sirenS";
+		sound[] = {"\sounds\medic_siren.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	class tazersound
+	{
+		name = "Tazersound";
+		sound[] = {"\sounds\tazer.ogg", 0.5, 1};
+		titles[] = {};
+	};
+	class flashbang
+	{
+		name = "flashbang";
+		sound[] = {"\sounds\flashbang.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	 class PhotoSound
+	{
+		name = "PhotoSound";
+		sound[] = {"\sounds\camera_shot.ogg",0.5011872,1.0};
+		titles[] = {};
+	};
+	class car_alarm
+	{
+		name = "car_alarm";
+		sound[] = {"\sounds\car_alarm.ogg", 0.8, 1};
+		titles[] = {};
+	};
+	class car_lock
+	{
+		name = "car_lock";
+		sound[] = {"\sounds\car_lock.ogg", 0.5,1};
+		titles[] = {};
+	};
+	class ractive
+	{
+		name = "ractive";
+		sound[] = {"\sounds\ractive.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	class car_unlock
+	{
+		name = "car_unlock";
+		sound[] = {"\sounds\car_unlock.ogg", 0.5,1};
+		titles[] = {};
+	};
+	class cement_mix
+	{
+		name = "cement_mix";
+		sound[] = {"\sounds\cement_mix.ogg", 0.1,1};
+		titles[] = {};
+	};
+	class handschellen
+	{
+		name = "handschellen";
+		sound[] = {"\sounds\handschellen.ogg", 0.5,1};
+		titles[] = {};
+	};
+	class processoil
+	{
+		name = "processoil";
+		sound[] = {"\sounds\processoil.ogg", 0.1,1};
+		titles[] = {};
+	};
+	class reparatur
+	{
+		name = "reparatur";
+		sound[] = {"\sounds\reparatur.ogg", 0.5,1};
+		titles[] = {};
+	};
+	class welcome
+	{
+		name = "welcome";
+		sound[] = {"\sounds\intro.ogg", 0.75, 1};
+		titles[] = {};
+	};
+	class countdown
+	{
+		name = "countdown";
+		sound[] = {"\sounds\countdown.ogg", 0.5,1};
+		titles[] = {};
+	};
+	class weedsound
+	{
+		name = "weedsound";
+		sound[] = {"\sounds\weedsound.ogg", 1,1};
+		titles[] = {};
+	};
+	class drug
+	{
+		name = "drug";
+		sound[] = {"\sounds\drug.ogg", 0.5,1};
+		titles[] = {};
+	};
+	class ko
+	{
+		name = "ko";
+		sound[] = {"\sounds\ko.ogg", 0.2,1};
+		titles[] = {};
+	};
+	class smelting
+	{
+		name = "smelting";
+		sound[] = {"\sounds\smelting.ogg", 0.1,1};
+		titles[] = {};
+	};
+	class newmessage
+	{
+		name = "newmessage";
+		sound[] = {"\sounds\message1.ogg", 1,1};
+		titles[] = {};
+	};
+	class notstand
+	{
+		name = "notstand";
+		sound[] = {"\sounds\alarm1.ogg", 0.85,1};
+		titles[] = {};
+	};
+};
+
+
+class CfgDebriefing
+{
+	class NotWhitelisted
+	{
+		title = "Mission Fehlgeschlagen";
+		subtitle = "Deine Berechtigung reicht nicht aus.";
+		description = "Es ist dir nicht gestattet den gewählten Serverslot zu verwenden. Bitte versuche einen anderen.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+
+	class Blacklisted
+	{
+		title = "Mission Fehlgeschlagen";
+		subtitle = "Gesperrt für Serverslot";
+		description = "Die Administration hat dich für den gewählten Serverslot gesperrt.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+};
+
+class CfgNotifications
+{
+	class MedicalRequestEmerg
+	{
+		title = "Notarzt angefordert";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		duration = 5;
+		priority = 7;
+	};
+
+	class DeliveryAssigned
+	{
+		title = "Liefermission angenommen";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		duration = 10;
+		priority = 7;
+	};
+
+	class DeliveryFailed
+	{
+		title = "Liefermission Fehlgeschlagen";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskiconfailed_ca.paa";
+		description = "%1";
+		duration = 7;
+		priority = 7;
+	};
+
+	class DeliverySucceeded
+	{
+		title = "Liefermission abgeschlossen";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcondone_ca.paa";
+		description = "%1";
+		duration = 6;
+		priority = 6;
+	};
+
+	class TextMessage
+	{
+		title = "Textnachricht erhalten";
+		iconPicture = "icons\messagenew.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+
+	class PoliceDispatch
+	{
+		title = "110 Notruf Zentrale";
+		iconPicture = "icons\messagepolice.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+
+	class AdminDispatch
+	{
+		title = "Admin Notruf Zentrale";
+		iconPicture = "icons\messageadmin.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+
+	class AdminMessage
+	{
+		title = "Admin Nachricht";
+		iconPicture = "icons\messageadmin.paa";
+		description = "%1";
+		duration = 10;
+		priority = 5;
+	};
+};

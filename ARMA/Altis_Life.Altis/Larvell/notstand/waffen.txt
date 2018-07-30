@@ -1,0 +1,51 @@
+rekrut
+hgun_P07_snds_F 30Rnd_9x21_Mag
+SMG_02_F  30Rnd_9x21_Mag
+
+gefreiter
+arifle_Mk20C_plain_F  30Rnd_556x45_Stanag
+arifle_Mk20_plain_F 30Rnd_556x45_Stanag
+arifle_MX_Black_F 30Rnd_65x39_caseless_mag
+arifle_MXC_Black_F  30Rnd_65x39_caseless_mag
+
+hauptgefreiter
+arifle_MX_GL_Black_F  30Rnd_65x39_caseless_mag  3Rnd_SmokePurple_Grenade_shell
+
+feldwebel
+arifle_MXM_Black_F  30Rnd_65x39_caseless_mag
+arifle_MX_SW_Black_F  30Rnd_65x39_caseless_mag
+
+hauptfeldwebel
+srifle_DMR_06_olive_F 20Rnd_762x51_Mag
+srifle_EBR_F  20Rnd_762x51_Mag
+
+leutnant
+srifle_DMR_03_F 20Rnd_762x51_Mag
+
+
+######################
+
+
+rekrut
+hgun_P07_snds_F 30Rnd_9x21_Mag
+SMG_02_F  30Rnd_9x21_Mag
+arifle_Mk20C_plain_F  30Rnd_556x45_Stanag
+arifle_Mk20_plain_F 30Rnd_556x45_Stanag
+
+gefreiter
+arifle_MX_Black_F 30Rnd_65x39_caseless_mag
+arifle_MXC_Black_F  30Rnd_65x39_caseless_mag
+arifle_MX_SW_Black_F  30Rnd_65x39_caseless_mag
+
+hauptgefreiter
+arifle_MX_GL_Black_F  30Rnd_65x39_caseless_mag  3Rnd_SmokePurple_Grenade_shell
+arifle_MXM_Black_F  30Rnd_65x39_caseless_mag
+
+feldwebel
+srifle_DMR_06_olive_F 20Rnd_762x51_Mag
+srifle_EBR_F  20Rnd_762x51_Mag
+LMG_Mk200_F 200Rnd_65x39_cased_Box  200Rnd_65x39_cased_Box_Tracer
+
+hauptfeldwebel
+srifle_DMR_03_F 20Rnd_762x51_Mag
+srifle_GM6_F  5Rnd_127x108_Mag  5Rnd_127x108_APDS_Mag

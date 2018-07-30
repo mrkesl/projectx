@@ -1,0 +1,61 @@
+// made by Creedcoder for Libra-Gaming.eu
+true spawn {
+        _tgt = player;
+        _rad = 250;
+        _ang = floor(random 360);
+        _alt = 250;
+        _dir = floor(random 360);
+        _fnc_establishingShot_fakeUAV = "Camera" camCreate [10,10,10];
+        cameraEffectEnableHUD true;
+        private ["_pos", "_coords"];
+        _pos = if (typeName _tgt == typeName objNull) then {position _tgt} else {_tgt};
+        _coords = [_pos, _rad, _ang] call BIS_fnc_relPos;
+        _coords set [2, _alt];
+        _fnc_establishingShot_fakeUAV camPrepareTarget _tgt;
+        _fnc_establishingShot_fakeUAV camPreparePos _coords;
+        _fnc_establishingShot_fakeUAV camPrepareFOV 0.700;
+        _fnc_establishingShot_fakeUAV camCommitPrepared 0;
+        _fnc_establishingShot_fakeUAV camPreload 0;
+        [_pos, _alt, _rad, _ang, _dir,_fnc_establishingShot_fakeUAV] spawn {
+                private ["_pos", "_alt", "_rad", "_ang", "_dir"];
+                _pos = _this select 0;
+                _alt = _this select 1;
+                _rad = _this select 2;
+                _ang = _this select 3;
+                _dir = _this select 4;
+                _uav = _this select 5;
+                _timesleep = time;
+                _uav cameraEffect ["INTERNAL", "BACK"];
+                while {_timesleep + 10 > time} do {
+                        private ["_coords"];
+                        if(life_keyStrocke)exitWith{};
+                        _coords = [_pos, _rad, _ang] call BIS_fnc_relPos;
+                        _coords set [2, _alt];
+                        _alt = _alt - 13;
+                        _rad = _rad - 13;
+                        _uav camPreparePos _coords;
+                        _uav camCommitPrepared 0.5;
+                        waitUntil {camCommitted _uav};
+                        _uav camPreparePos _coords;
+                        _uav camCommitPrepared 0;
+                        
+                        _ang = if (_dir == 0) then {_ang - 0.5} else {_ang + 0.5};
+                        if(life_keyStrocke)exitWith{};
+                };
+        };
+        private ["_ppColor"];
+        _ppColor = ppEffectCreate ["colorCorrections", 1999];
+        _ppColor ppEffectEnable true;
+        _ppColor ppEffectAdjust [1, 1, 0, [1, 1, 1, 0], [0.8, 0.8, 0.8, 0.65], [1, 1, 1, 1.0]];
+        _ppColor ppEffectCommit 0;
+        private ["_ppGrain"];
+        _ppGrain = ppEffectCreate ["filmGrain", 2012];
+        _ppGrain ppEffectEnable true;
+        _ppGrain ppEffectAdjust [0.1, 1, 1, 0, 1];
+        _ppGrain ppEffectCommit 0;
+        sleep 10;
+        _fnc_establishingShot_fakeUAV cameraEffect ["TERMINATE", "BACK"];
+        camDestroy _fnc_establishingShot_fakeUAV;
+        ppEffectDestroy _ppColor;
+        ppEffectDestroy _ppGrain;
+};

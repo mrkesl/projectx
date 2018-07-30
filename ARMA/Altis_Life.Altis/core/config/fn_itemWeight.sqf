@@ -1,0 +1,136 @@
+/*
+	File: fn_itemWeight.sqf
+	Author: Bryan "Tonic" Boardwine
+
+	Description:
+	Gets the items weight and returns it.
+*/
+params [["_item", "", [""]]];
+if(_item == "") exitWith {};
+
+switch (_item) do
+{
+	case "oilu": {5};
+	case "oilp": {5};
+	case "heroinu": {5};
+	case "heroinp": {4};
+	case "cannabis": {4};
+	case "marijuana": {3};
+	case "apple": {1};
+	case "water": {1};
+	case "rabbit": {1};
+	case "salema": {2};
+	case "ornate": {2};
+	case "mackerel": {4};
+	case "tuna": {2};
+	case "mullet": {2};
+	case "catshark": {2};
+	case "turtle": {4};
+	case "fishing": {2};
+	case "turtlesoup": {2};
+	case "donuts": {1};
+	case "coffee": {1};
+	case "fuelE": {2};
+	case "fuelF": {5};
+	case "money": {0};
+	case "pickaxe": {2};
+	case "copperore": {4};
+	case "ironore": {4};
+	case "copper_r": {3};
+	case "iron_r": {3};
+	case "sand": {3};
+	case "salt": {3};
+	case "salt_r": {1};
+	case "glass": {1};
+	case "diamond": {4};
+	case "diamondc": {3};
+	case "cocaine": {6};
+	case "cocainep": {4};
+	case "spikeStrip": {5};
+	case "rock": {4};
+	case "cement": {4};
+	case "goldbar": {12};
+	case "blastingcharge": {15};
+	case "boltcutter": {5};
+	case "defusekit": {2};
+	case "storagesmall": {5};
+	case "storagebig": {10};
+	// Goldspawning   http://www.altisliferpg.com/topic/4686-howto-dynamic-gold-spawnshunting/
+	case "underwatercharge": {5};
+	case "goldbarp": {12};
+	//http://www.altisliferpg.com/topic/4769-how-toalcohol-with-multiple-item-processingdrunk-effects-passouts-and-police-breathalyzing/
+	case "rye": {2};
+	case "hops": {2};
+	case "yeast": {2};
+	case "cornmeal": {2};
+	case "mash": {2};
+	case "whiskey": {4};
+	case "beerp": {4};
+	case "moonshine": {5};
+	case "bottledwhiskey": {5};
+	case "bottledbeer": {5};
+	case "bottledshine": {5};
+	case "bottles": {1};
+	case "kabelbinder": {3};
+	case "absperrung": {5};
+	case "pole": {2};
+	case "tapesign": {2};
+	case "strahler": {5};
+	case "huetchen": {2};
+	case "battery": {1};
+	case "puranium": {1};
+	case "ipuranium": {1};
+	case "uranium1": {7};
+	case "uranium2": {6};
+	case "uranium3": {6};
+	case "uranium4": {6};
+	case "uranium": {3};
+	case "joint": {3};
+	case "fisch": {2};
+	case "spritze": {1};
+	case "dirt": {3};
+	case "papier": {1};
+	case "ptuete": {1};
+	case "stiefel": {4};
+	case "ssenkel": {1};
+	case "hoffnung": {3};
+	case "glasflasche": {4};
+	case "bolzen": {1};
+	case "gschaft": {1};
+	case "feder": {1};
+	case "spulver": {1};
+	case "abzug": {1};
+	case "glauf": {1};
+	case "vhalterung": {1};
+	case "schrauben": {1};
+	case "plauf": {1};
+	case "schmuck": {4};
+	case "sfetzen": {1};
+	case "nadel": {1};
+	case "gfaden": {1};
+	case "rfaden": {1};
+	case "ofaden": {1};
+	case "sfaden": {1};
+	case "cstoff": {1};
+	case "rsfetzen": {1};
+	case "blynx1": {1};
+	case "blynx2": {1};
+	case "blynx3": {1};
+	case "blrr1": {1};
+	case "blrr2": {1};
+	case "btitan1": {1};
+	case "btitan2": {1};
+	case "bzafir": {1};
+	case "pat": {1};
+	case "patg": {1};
+	case "sflasche": {1};
+	case "npren": {1};
+	case "pflasche": {1};
+	case "axe": {2};
+	case "wood": {3};
+	case "woodc": {3};
+	case "woodi": {3};
+	case "fuelPipe": {1};
+	case "speedbomb": {5};
+	default {1};
+};
