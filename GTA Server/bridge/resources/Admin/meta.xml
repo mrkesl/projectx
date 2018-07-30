@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<meta>
+  <info name="Development Server" author="-Andreas" type="gamemode"/>
+  
+  <script src="AccountHandler.cs" type="server" lang="csharp" />
+  <script src="Admin.cs" type="server" lang="csharp" />
+
+  <script src="Data/AdminAccount.cs" type="server" lang="csharp" />
+  <script src="Data/BanData.cs" type="server" lang="csharp" />
+
+  <script src="Database.cs" type="server" lang="csharp" />
+  
+  <assembly ref="Newtonsoft.Json.dll"/>
+  <assembly ref="BCrypt.Net-Core.dll"/>
+  
+</meta>
